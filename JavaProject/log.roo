@@ -1,0 +1,10 @@
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-25 02:06:20
+project --topLevelPackage itcollege.ee --projectName JavaProject --java 6
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-11-25 02:06:24
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-25 02:06:35
+persistence setup --database HYPERSONIC_PERSISTENT --provider HIBERNATE 
+web mvc setup 
+entity --class ~.entities.Vahtkond
+web mvc all --package ~.web
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-25 12:52:19
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-11-25 12:53:55

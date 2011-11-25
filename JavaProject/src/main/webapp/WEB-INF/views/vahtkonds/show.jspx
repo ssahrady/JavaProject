@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_itcollege_ee_entities_Vahtkond" object="${vahtkond}" path="/vahtkonds" z="F0xm5VxrevuWdPacGFzBjuGBllw=">
+        <field:display field="kood" id="s_itcollege_ee_entities_Vahtkond_Kood" object="${vahtkond}" z="4c7SzvdNoXpdZoT3PFgK5xNfTWk="/>
+        <field:display field="nimetus" id="s_itcollege_ee_entities_Vahtkond_Nimetus" object="${vahtkond}" z="M7cUz+MpCzQDhlfKQHFBSeWC7pw="/>
+        <field:display field="piiripunkt" id="s_itcollege_ee_entities_Vahtkond_Piiripunkt" object="${vahtkond}" z="hnslxG1BoNhVI8lDD3TC1KouVYs="/>
+        <field:display date="true" dateTimePattern="${vahtkond_alates_date_format}" field="alates" id="s_itcollege_ee_entities_Vahtkond_Alates" object="${vahtkond}" z="fX0tFUzaFutyutoKyhILoi1bYIM="/>
+        <field:display date="true" dateTimePattern="${vahtkond_kuni_date_format}" field="kuni" id="s_itcollege_ee_entities_Vahtkond_Kuni" object="${vahtkond}" z="pKfUqTon7P2EToQRDNqS8mlNrdA="/>
+        <field:display field="komentaar" id="s_itcollege_ee_entities_Vahtkond_Komentaar" object="${vahtkond}" z="Pf89i8Eq/nQ8IB6XpX3f165w4DM="/>
+    </page:show>
+</div>
