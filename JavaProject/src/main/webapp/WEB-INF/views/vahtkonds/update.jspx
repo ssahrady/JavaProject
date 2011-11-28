@@ -2,12 +2,10 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_itcollege_ee_entities_Vahtkond" idField="Id" modelAttribute="vahtkond" path="/vahtkonds" versionField="Version" z="W8S2oUOtXoWrTcjMgkBwk3PWiDQ=">
+    <form:update id="fu_itcollege_ee_entities_Vahtkond" idField="Vahtkond_Id" modelAttribute="vahtkond" path="/vahtkonds" versionField="Version" z="PU9d5mhbFGr4QH0/mjVe1NAo+Ts=">
         <field:input field="Kood" id="c_itcollege_ee_entities_Vahtkond_Kood" max="20" min="2" required="true" z="VrWkN+JB3UUhGf9ACTwvUdmA5j4="/>
         <field:textarea field="Nimetus" id="c_itcollege_ee_entities_Vahtkond_Nimetus" required="true" z="3XH27DfYvD7BO0lS1lgUd/vjRVA="/>
-        <field:input field="Piiripunkt" id="c_itcollege_ee_entities_Vahtkond_Piiripunkt" required="true" z="D6wHsseQd4ImsxVOnDbIZxE9mV4="/>
         <field:datetime dateTimePattern="${vahtkond_alates_date_format}" field="Alates" id="c_itcollege_ee_entities_Vahtkond_Alates" required="true" z="MzdpWbB3agytnDNo63Xb+YvdZis="/>
         <field:datetime dateTimePattern="${vahtkond_kuni_date_format}" field="Kuni" id="c_itcollege_ee_entities_Vahtkond_Kuni" required="true" z="uGMXgrNYJaIJOJuIZ2KMGg/nr+8="/>
-        <field:input field="Komentaar" id="c_itcollege_ee_entities_Vahtkond_Komentaar" z="7rK3NayYDp3p3wws5uZ6wSsj5VI="/>
     </form:update>
 </div>

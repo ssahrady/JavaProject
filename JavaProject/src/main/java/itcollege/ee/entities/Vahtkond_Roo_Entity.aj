@@ -22,6 +22,14 @@ privileged aspect Vahtkond_Roo_Entity {
     @Column(name = "version")
     private Integer Vahtkond.version;
     
+    public Long Vahtkond.getVahtkond_Id() {
+        return this.Vahtkond_Id;
+    }
+    
+    public void Vahtkond.setVahtkond_Id(Long id) {
+        this.Vahtkond_Id = id;
+    }
+    
     public Integer Vahtkond.getVersion() {
         return this.version;
     }
@@ -42,7 +50,7 @@ privileged aspect Vahtkond_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Vahtkond attached = Vahtkond.findVahtkond(this.Id);
+            Vahtkond attached = Vahtkond.findVahtkond(this.Vahtkond_Id);
             this.entityManager.remove(attached);
         }
     }
@@ -81,9 +89,9 @@ privileged aspect Vahtkond_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Vahtkond o", Vahtkond.class).getResultList();
     }
     
-    public static Vahtkond Vahtkond.findVahtkond(Long Id) {
-        if (Id == null) return null;
-        return entityManager().find(Vahtkond.class, Id);
+    public static Vahtkond Vahtkond.findVahtkond(Long Vahtkond_Id) {
+        if (Vahtkond_Id == null) return null;
+        return entityManager().find(Vahtkond.class, Vahtkond_Id);
     }
     
     public static List<Vahtkond> Vahtkond.findVahtkondEntries(int firstResult, int maxResults) {

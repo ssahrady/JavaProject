@@ -16,6 +16,7 @@ privileged aspect Vahtkond_Roo_ToString {
         sb.append("Kuni: ").append(getKuni()).append(", ");
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
         sb.append("Piiripunkt: ").append(getPiiripunkt() == null ? "null" : getPiiripunkt().size()).append(", ");
+        sb.append("Vahtkond_Id: ").append(getVahtkond_Id()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();
     }

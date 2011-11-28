@@ -29,21 +29,21 @@ public class Vahtkond implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long Id;
+	private Long Vahtkond_Id;
 	@Size(min=2, max=20)
 	private String Kood;
 	@NotNull
 	@Size(min=2, max=60)
 	private String Nimetus;
 	@NotNull
-	private ArrayList<String> Piiripunkt;
+	private ArrayList<Integer> Piiripunkt_Id;
 	@DateTimeFormat(style="M-")
 	@NotNull
 	private Date Alates;
 	@DateTimeFormat(style="M-")
 	@NotNull
 	private Date Kuni;
-	private String Komentaar;
+	private String Kommentaar;
 	private static final long serialVersionUID = 1L;
 
 	public Vahtkond() {
@@ -64,18 +64,19 @@ public class Vahtkond implements Serializable {
 		this.Nimetus = Nimetus;
 	}   
 	public Long getId() {
-		return this.Id;
+		return this.Vahtkond_Id;
 	}
 
 	public void setId(Long Id) {
-		this.Id = Id;
+		this.Vahtkond_Id = Id;
+
 	}   
-	public ArrayList<String> getPiiripunkt() {
-		return this.Piiripunkt;
+	public ArrayList<Integer> getPiiripunkt() {
+		return this.Piiripunkt_Id;
 	}
 
-	public void setPiiripunkt(ArrayList<String> Piiripunkt) {
-		this.Piiripunkt = Piiripunkt;
+	public void setPiiripunkt(ArrayList<Integer> Piiripunkt) {
+		this.Piiripunkt_Id = Piiripunkt;
 	}   
 	public Date getAlates() {
 		return this.Alates;
@@ -92,11 +93,11 @@ public class Vahtkond implements Serializable {
 		this.Kuni = Kuni;
 	}   
 	public String getKomentaar() {
-		return this.Komentaar;
+		return this.Kommentaar;
 	}
 
 	public void setKomentaar(String Komentaar) {
-		this.Komentaar = Komentaar;
+		this.Kommentaar = Komentaar;
 	}
    
 }

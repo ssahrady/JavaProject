@@ -7,7 +7,6 @@
             <div style="float:left; width:250px;">
                 <field:input field="Kood" id="c_itcollege_ee_entities_Vahtkond_Kood" max="20" min="2" required="true" z="VrWkN+JB3UUhGf9ACTwvUdmA5j4="/>
                 <field:input field="Nimetus" id="c_itcollege_ee_entities_Vahtkond_Nimetus" required="true" z="user-managed"/>
-                <field:input field="Piiripunkt" id="c_itcollege_ee_entities_Vahtkond_Piiripunkt" required="true" z="D6wHsseQd4ImsxVOnDbIZxE9mV4="/>
                 <field:datetime dateTimePattern="${vahtkond_alates_date_format}" field="Alates" id="c_itcollege_ee_entities_Vahtkond_Alates" required="true" z="MzdpWbB3agytnDNo63Xb+YvdZis="/>
                 <field:datetime dateTimePattern="${vahtkond_kuni_date_format}" field="Kuni" id="c_itcollege_ee_entities_Vahtkond_Kuni" required="true" z="uGMXgrNYJaIJOJuIZ2KMGg/nr+8="/>
             </div>

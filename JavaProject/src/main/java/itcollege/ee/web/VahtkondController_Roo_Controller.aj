@@ -34,7 +34,7 @@ privileged aspect VahtkondController_Roo_Controller {
         }
         uiModel.asMap().clear();
         vahtkond.persist();
-        return "redirect:/vahtkonds/" + encodeUrlPathSegment(vahtkond.getId().toString(), httpServletRequest);
+        return "redirect:/vahtkonds/" + encodeUrlPathSegment(vahtkond.getVahtkond_Id().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -44,11 +44,11 @@ privileged aspect VahtkondController_Roo_Controller {
         return "vahtkonds/create";
     }
     
-    @RequestMapping(value = "/{Id}", method = RequestMethod.GET)
-    public String VahtkondController.show(@PathVariable("Id") Long Id, Model uiModel) {
+    @RequestMapping(value = "/{Vahtkond_Id}", method = RequestMethod.GET)
+    public String VahtkondController.show(@PathVariable("Vahtkond_Id") Long Vahtkond_Id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("vahtkond", Vahtkond.findVahtkond(Id));
-        uiModel.addAttribute("itemId", Id);
+        uiModel.addAttribute("vahtkond", Vahtkond.findVahtkond(Vahtkond_Id));
+        uiModel.addAttribute("itemId", Vahtkond_Id);
         return "vahtkonds/show";
     }
     
@@ -75,19 +75,19 @@ privileged aspect VahtkondController_Roo_Controller {
         }
         uiModel.asMap().clear();
         vahtkond.merge();
-        return "redirect:/vahtkonds/" + encodeUrlPathSegment(vahtkond.getId().toString(), httpServletRequest);
+        return "redirect:/vahtkonds/" + encodeUrlPathSegment(vahtkond.getVahtkond_Id().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{Id}", params = "form", method = RequestMethod.GET)
-    public String VahtkondController.updateForm(@PathVariable("Id") Long Id, Model uiModel) {
-        uiModel.addAttribute("vahtkond", Vahtkond.findVahtkond(Id));
+    @RequestMapping(value = "/{Vahtkond_Id}", params = "form", method = RequestMethod.GET)
+    public String VahtkondController.updateForm(@PathVariable("Vahtkond_Id") Long Vahtkond_Id, Model uiModel) {
+        uiModel.addAttribute("vahtkond", Vahtkond.findVahtkond(Vahtkond_Id));
         addDateTimeFormatPatterns(uiModel);
         return "vahtkonds/update";
     }
     
-    @RequestMapping(value = "/{Id}", method = RequestMethod.DELETE)
-    public String VahtkondController.delete(@PathVariable("Id") Long Id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Vahtkond.findVahtkond(Id).remove();
+    @RequestMapping(value = "/{Vahtkond_Id}", method = RequestMethod.DELETE)
+    public String VahtkondController.delete(@PathVariable("Vahtkond_Id") Long Vahtkond_Id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Vahtkond.findVahtkond(Vahtkond_Id).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());

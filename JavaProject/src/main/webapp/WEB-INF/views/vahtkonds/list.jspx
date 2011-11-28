@@ -3,13 +3,11 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_itcollege_ee_entities_Vahtkond" items="${vahtkonds}" z="uLC8/Lx5UcHjCMwwDy65WcYH6Qc=">
-        <table:table data="${vahtkonds}" id="l_itcollege_ee_entities_Vahtkond" path="/vahtkonds" typeIdFieldName="Id" z="9MKVxssNQcooOuwxPdsTNhBiIFE=">
+        <table:table data="${vahtkonds}" id="l_itcollege_ee_entities_Vahtkond" path="/vahtkonds" typeIdFieldName="Vahtkond_Id" z="F+SOb03bYOMQpDI4SJ0sECGkvIo=">
             <table:column id="c_itcollege_ee_entities_Vahtkond_Kood" property="kood" z="eUQZ9mx9S0xbk8iAu7ondqtWr6Q="/>
             <table:column id="c_itcollege_ee_entities_Vahtkond_Nimetus" property="nimetus" z="ZxbSr1jQejgnUrIddQBP3V6gjJY="/>
-            <table:column id="c_itcollege_ee_entities_Vahtkond_Piiripunkt" property="piiripunkt" z="2b4y/IEX3gwn7fTqUepMaewsxrs="/>
             <table:column date="true" dateTimePattern="${vahtkond_alates_date_format}" id="c_itcollege_ee_entities_Vahtkond_Alates" property="alates" z="0TJeRFKhWY2nFUVB6Vs5v/WgeUU="/>
             <table:column date="true" dateTimePattern="${vahtkond_kuni_date_format}" id="c_itcollege_ee_entities_Vahtkond_Kuni" property="kuni" z="5NH/1LmJRuoZ+sKUJC03bQxP7RM="/>
-            <table:column id="c_itcollege_ee_entities_Vahtkond_Komentaar" property="komentaar" z="k1aAE8kj/Mb+oDn0bm1+bWKzL4Y="/>
         </table:table>
     </page:list>
 </div>
