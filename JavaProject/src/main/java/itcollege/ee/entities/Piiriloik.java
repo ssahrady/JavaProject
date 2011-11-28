@@ -7,20 +7,17 @@ import java.util.Set;
 
 
 /**
- * The persistent class for the VAHTKOND database table.
+ * The persistent class for the PIIRILOIK database table.
  * 
  */
 @Entity
-@Table(name="VAHTKOND")
-public class Vahtkond implements Serializable {
+@Table(name="PIIRILOIK")
+public class Piiriloik implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="VAHTKOND_ID", unique=true, nullable=false)
-	private int vahtkondId;
-
-    @Temporal( TemporalType.DATE)
-	private Date alates;
+	@Column(name="PIIRILOIK_ID", unique=true, nullable=false)
+	private int piiriloikId;
 
 	@Column(nullable=false, length=32)
 	private String avaja;
@@ -29,14 +26,14 @@ public class Vahtkond implements Serializable {
 	@Column(nullable=false)
 	private Date avatud;
 
+	@Column(name="GPS_KOORDINAADID", length=500)
+	private String gpsKoordinaadid;
+
 	@Column(length=500)
 	private String kommentaar;
 
-	@Column(length=20)
+	@Column(length=18)
 	private String kood;
-
-    @Temporal( TemporalType.DATE)
-	private Date kuni;
 
     @Temporal( TemporalType.DATE)
 	@Column(nullable=false)
@@ -55,45 +52,27 @@ public class Vahtkond implements Serializable {
 	@Column(length=32)
 	private String sulgeja;
 
-	//bi-directional many-to-one association to Piiripunkt
-    @ManyToOne
-	@JoinColumn(name="PIIRIPUNKT_ID")
-	private Piiripunkt piiripunkt;
+	//bi-directional many-to-one association to Intsident
+	@OneToMany(mappedBy="piiriloik")
+	private Set<Intsident> intsidents;
 
-	//bi-directional many-to-one association to Vaeosa
-    @ManyToOne
-	@JoinColumn(name="VAEOSA_ID_ID")
-	private Vaeosa vaeosa;
-
-	//bi-directional many-to-one association to VahtkondIntsidendi
-	@OneToMany(mappedBy="vahtkond")
-	private Set<VahtkondIntsidendi> vahtkondIntsidendis;
-
-	//bi-directional many-to-one association to VahtkonnaLiige
-	@OneToMany(mappedBy="vahtkond")
-	private Set<VahtkonnaLiige> vahtkonnaLiiges;
+	//bi-directional many-to-one association to PiiriloiguHaldaja
+	@OneToMany(mappedBy="piiriloik")
+	private Set<PiiriloiguHaldaja> piiriloiguHaldajas;
 
 	//bi-directional many-to-one association to VahtkonndPiiriloigul
-	@OneToMany(mappedBy="vahtkond")
+	@OneToMany(mappedBy="piiriloik")
 	private Set<VahtkonndPiiriloigul> vahtkonndPiiriloiguls;
 
-    public Vahtkond() {
+    public Piiriloik() {
     }
 
-	public int getVahtkondId() {
-		return this.vahtkondId;
+	public int getPiiriloikId() {
+		return this.piiriloikId;
 	}
 
-	public void setVahtkondId(int vahtkondId) {
-		this.vahtkondId = vahtkondId;
-	}
-
-	public Date getAlates() {
-		return this.alates;
-	}
-
-	public void setAlates(Date alates) {
-		this.alates = alates;
+	public void setPiiriloikId(int piiriloikId) {
+		this.piiriloikId = piiriloikId;
 	}
 
 	public String getAvaja() {
@@ -112,6 +91,14 @@ public class Vahtkond implements Serializable {
 		this.avatud = avatud;
 	}
 
+	public String getGpsKoordinaadid() {
+		return this.gpsKoordinaadid;
+	}
+
+	public void setGpsKoordinaadid(String gpsKoordinaadid) {
+		this.gpsKoordinaadid = gpsKoordinaadid;
+	}
+
 	public String getKommentaar() {
 		return this.kommentaar;
 	}
@@ -126,14 +113,6 @@ public class Vahtkond implements Serializable {
 
 	public void setKood(String kood) {
 		this.kood = kood;
-	}
-
-	public Date getKuni() {
-		return this.kuni;
-	}
-
-	public void setKuni(Date kuni) {
-		this.kuni = kuni;
 	}
 
 	public Date getMuudetud() {
@@ -176,36 +155,20 @@ public class Vahtkond implements Serializable {
 		this.sulgeja = sulgeja;
 	}
 
-	public Piiripunkt getPiiripunkt() {
-		return this.piiripunkt;
+	public Set<Intsident> getIntsidents() {
+		return this.intsidents;
 	}
 
-	public void setPiiripunkt(Piiripunkt piiripunkt) {
-		this.piiripunkt = piiripunkt;
+	public void setIntsidents(Set<Intsident> intsidents) {
+		this.intsidents = intsidents;
 	}
 	
-	public Vaeosa getVaeosa() {
-		return this.vaeosa;
+	public Set<PiiriloiguHaldaja> getPiiriloiguHaldajas() {
+		return this.piiriloiguHaldajas;
 	}
 
-	public void setVaeosa(Vaeosa vaeosa) {
-		this.vaeosa = vaeosa;
-	}
-	
-	public Set<VahtkondIntsidendi> getVahtkondIntsidendis() {
-		return this.vahtkondIntsidendis;
-	}
-
-	public void setVahtkondIntsidendis(Set<VahtkondIntsidendi> vahtkondIntsidendis) {
-		this.vahtkondIntsidendis = vahtkondIntsidendis;
-	}
-	
-	public Set<VahtkonnaLiige> getVahtkonnaLiiges() {
-		return this.vahtkonnaLiiges;
-	}
-
-	public void setVahtkonnaLiiges(Set<VahtkonnaLiige> vahtkonnaLiiges) {
-		this.vahtkonnaLiiges = vahtkonnaLiiges;
+	public void setPiiriloiguHaldajas(Set<PiiriloiguHaldaja> piiriloiguHaldajas) {
+		this.piiriloiguHaldajas = piiriloiguHaldajas;
 	}
 	
 	public Set<VahtkonndPiiriloigul> getVahtkonndPiiriloiguls() {

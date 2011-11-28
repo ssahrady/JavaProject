@@ -2,6 +2,53 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 <persistence-unit name="persistenceUnit" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>itcollege.ee.entities.AdminAlluvus</class>
+        <class>itcollege.ee.entities.Amet</class>
+        <class>itcollege.ee.entities.AmetPiiripunkti</class>
+        <class>itcollege.ee.entities.AmetVaeosa</class>
+        <class>itcollege.ee.entities.Auaste</class>
+        <class>itcollege.ee.entities.AuastmeMuutumine</class>
+        <class>itcollege.ee.entities.IntsidendiLiik</class>
+        <class>itcollege.ee.entities.Intsident</class>
+        <class>itcollege.ee.entities.IsikuSeadusIntsidendi</class>
+        <class>itcollege.ee.entities.IsikIntsidendi</class>
+        <class>itcollege.ee.entities.Kodakondsus</class>
+        <class>itcollege.ee.entities.KontaktiLiik</class>
+        <class>itcollege.ee.entities.Objekt</class>
+        <class>itcollege.ee.entities.ObjektiLiik</class>
+        <class>itcollege.ee.entities.ObjektiSeadusIntsidendi</class>
+        <class>itcollege.ee.entities.ObjektIntsidendi</class>
+        <class>itcollege.ee.entities.OrgYksus</class>
+        <class>itcollege.ee.entities.PiiriloiguHaldaja</class>
+        <class>itcollege.ee.entities.Piiriloik</class>
+        <class>itcollege.ee.entities.Piiripunkt</class>
+        <class>itcollege.ee.entities.PiiripunktiAlluvus</class>
+        <class>itcollege.ee.entities.PiiripunktiOrgYksus</class>
+        <class>itcollege.ee.entities.Piiririkkuja</class>
+        <class>itcollege.ee.entities.Piirivalvur</class>
+        <class>itcollege.ee.entities.PiirivalvuriKontakt</class>
+        <class>itcollege.ee.entities.PiirivalvuriSeadusIntsidendi</class>
+        <class>itcollege.ee.entities.PiirivalvurIntsidendi</class>
+        <class>itcollege.ee.entities.PiirivalvurPiiripunkti</class>
+        <class>itcollege.ee.entities.PiirivalvurVaeosa</class>
+        <class>itcollege.ee.entities.PiirivalvurVodikohal</class>
+        <class>itcollege.ee.entities.RiigiAdminYksus</class>
+        <class>itcollege.ee.entities.RiigiAdminYksuseLiik</class>
+        <class>itcollege.ee.entities.Riik</class>
+        <class>itcollege.ee.entities.Ruumiyksus</class>
+        <class>itcollege.ee.entities.RuumiyksuseLiik</class>
+        <class>itcollege.ee.entities.Seadus</class>
+        <class>itcollege.ee.entities.SeadusePunkt</class>
+        <class>itcollege.ee.entities.SeotudKontaktisik</class>
+        <class>itcollege.ee.entities.SuguluseRolliLiik</class>
+        <class>itcollege.ee.entities.Vaeosa</class>
+        <class>itcollege.ee.entities.VaeosaAlluvus</class>
+        <class>itcollege.ee.entities.Vahtkond</class>
+        <class>itcollege.ee.entities.VahtkondIntsidendi</class>
+        <class>itcollege.ee.entities.VahtkonnaLiige</class>
+        <class>itcollege.ee.entities.VahtkonndPiiriloigul</class>
+        <class>itcollege.ee.entities.VoimalikAlluvus</class>
+        <class>itcollege.ee.entities.Voodikoht</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
             <!-- value="create" to build a new database on each run; value="update" to modify an existing database; value="create-drop" means the same as "create" but also drops tables when Hibernate closes; value="validate" makes no changes to the database -->

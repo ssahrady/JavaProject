@@ -9,3 +9,7 @@ web mvc all --package ~.web
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-25 12:52:19
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-11-25 12:53:55
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-28 14:25:36
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-28 21:18:28
+web mvc controller --class ~itcollege.ee.entities.VahtkonnaLiigeController
+web mvc controller --class ~.web.VahtkonnaLiigeController
+web mvc controller --class ~.web.VahtkonnaLiigeController

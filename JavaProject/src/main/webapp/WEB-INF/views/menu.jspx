@@ -7,5 +7,8 @@
             <menu:item id="i_vahtkond_new" messageCode="global_menu_new" url="/vahtkonds?form" z="bvt9LhUzxYB+1+sxarsHufGq1po="/>
             <menu:item id="i_vahtkond_list" messageCode="global_menu_list" url="/vahtkonds?page=1&amp;size=${empty param.size ? 10 : param.size}" z="yjK8dn1Lr/RZ1HbVVrZdpoTkXKI="/>
         </menu:category>
+        <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
+            <menu:item id="i_controller__vahtkonnaliigeindex_id" messageCode="global_generic" url="/vahtkonnaliige/index" z="hZQ+C+CIcRddOHxaqUdGDYfJhMc="/>
+        </menu:category>
     </menu:menu>
 </div>

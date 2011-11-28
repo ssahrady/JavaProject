@@ -7,19 +7,20 @@ import java.util.Set;
 
 
 /**
- * The persistent class for the VAHTKOND database table.
+ * The persistent class for the AMET_VAEOSAS database table.
  * 
  */
 @Entity
-@Table(name="VAHTKOND")
-public class Vahtkond implements Serializable {
+@Table(name="AMET_VAEOSAS")
+public class AmetVaeosa implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="VAHTKOND_ID", unique=true, nullable=false)
-	private int vahtkondId;
+	@Column(name="AMET_VAEOSAS_ID", unique=true, nullable=false)
+	private int ametVaeosasId;
 
     @Temporal( TemporalType.DATE)
+	@Column(nullable=false)
 	private Date alates;
 
 	@Column(nullable=false, length=32)
@@ -32,10 +33,8 @@ public class Vahtkond implements Serializable {
 	@Column(length=500)
 	private String kommentaar;
 
-	@Column(length=20)
-	private String kood;
-
     @Temporal( TemporalType.DATE)
+	@Column(nullable=false)
 	private Date kuni;
 
     @Temporal( TemporalType.DATE)
@@ -45,9 +44,6 @@ public class Vahtkond implements Serializable {
 	@Column(nullable=false, length=32)
 	private String muutja;
 
-	@Column(length=60)
-	private String nimetus;
-
     @Temporal( TemporalType.DATE)
 	@Column(nullable=false)
 	private Date suletud;
@@ -55,37 +51,29 @@ public class Vahtkond implements Serializable {
 	@Column(length=32)
 	private String sulgeja;
 
-	//bi-directional many-to-one association to Piiripunkt
+	//bi-directional many-to-one association to Amet
     @ManyToOne
-	@JoinColumn(name="PIIRIPUNKT_ID")
-	private Piiripunkt piiripunkt;
+	@JoinColumn(name="AMET_ID", nullable=false)
+	private Amet amet;
 
 	//bi-directional many-to-one association to Vaeosa
     @ManyToOne
-	@JoinColumn(name="VAEOSA_ID_ID")
+	@JoinColumn(name="VAEOSA_ID_ID", nullable=false)
 	private Vaeosa vaeosa;
 
-	//bi-directional many-to-one association to VahtkondIntsidendi
-	@OneToMany(mappedBy="vahtkond")
-	private Set<VahtkondIntsidendi> vahtkondIntsidendis;
+	//bi-directional many-to-one association to PiirivalvurVaeosa
+	@OneToMany(mappedBy="ametVaeosa")
+	private Set<PiirivalvurVaeosa> piirivalvurVaeosas;
 
-	//bi-directional many-to-one association to VahtkonnaLiige
-	@OneToMany(mappedBy="vahtkond")
-	private Set<VahtkonnaLiige> vahtkonnaLiiges;
-
-	//bi-directional many-to-one association to VahtkonndPiiriloigul
-	@OneToMany(mappedBy="vahtkond")
-	private Set<VahtkonndPiiriloigul> vahtkonndPiiriloiguls;
-
-    public Vahtkond() {
+    public AmetVaeosa() {
     }
 
-	public int getVahtkondId() {
-		return this.vahtkondId;
+	public int getAmetVaeosasId() {
+		return this.ametVaeosasId;
 	}
 
-	public void setVahtkondId(int vahtkondId) {
-		this.vahtkondId = vahtkondId;
+	public void setAmetVaeosasId(int ametVaeosasId) {
+		this.ametVaeosasId = ametVaeosasId;
 	}
 
 	public Date getAlates() {
@@ -120,14 +108,6 @@ public class Vahtkond implements Serializable {
 		this.kommentaar = kommentaar;
 	}
 
-	public String getKood() {
-		return this.kood;
-	}
-
-	public void setKood(String kood) {
-		this.kood = kood;
-	}
-
 	public Date getKuni() {
 		return this.kuni;
 	}
@@ -152,14 +132,6 @@ public class Vahtkond implements Serializable {
 		this.muutja = muutja;
 	}
 
-	public String getNimetus() {
-		return this.nimetus;
-	}
-
-	public void setNimetus(String nimetus) {
-		this.nimetus = nimetus;
-	}
-
 	public Date getSuletud() {
 		return this.suletud;
 	}
@@ -176,12 +148,12 @@ public class Vahtkond implements Serializable {
 		this.sulgeja = sulgeja;
 	}
 
-	public Piiripunkt getPiiripunkt() {
-		return this.piiripunkt;
+	public Amet getAmet() {
+		return this.amet;
 	}
 
-	public void setPiiripunkt(Piiripunkt piiripunkt) {
-		this.piiripunkt = piiripunkt;
+	public void setAmet(Amet amet) {
+		this.amet = amet;
 	}
 	
 	public Vaeosa getVaeosa() {
@@ -192,28 +164,12 @@ public class Vahtkond implements Serializable {
 		this.vaeosa = vaeosa;
 	}
 	
-	public Set<VahtkondIntsidendi> getVahtkondIntsidendis() {
-		return this.vahtkondIntsidendis;
+	public Set<PiirivalvurVaeosa> getPiirivalvurVaeosas() {
+		return this.piirivalvurVaeosas;
 	}
 
-	public void setVahtkondIntsidendis(Set<VahtkondIntsidendi> vahtkondIntsidendis) {
-		this.vahtkondIntsidendis = vahtkondIntsidendis;
-	}
-	
-	public Set<VahtkonnaLiige> getVahtkonnaLiiges() {
-		return this.vahtkonnaLiiges;
-	}
-
-	public void setVahtkonnaLiiges(Set<VahtkonnaLiige> vahtkonnaLiiges) {
-		this.vahtkonnaLiiges = vahtkonnaLiiges;
-	}
-	
-	public Set<VahtkonndPiiriloigul> getVahtkonndPiiriloiguls() {
-		return this.vahtkonndPiiriloiguls;
-	}
-
-	public void setVahtkonndPiiriloiguls(Set<VahtkonndPiiriloigul> vahtkonndPiiriloiguls) {
-		this.vahtkonndPiiriloiguls = vahtkonndPiiriloiguls;
+	public void setPiirivalvurVaeosas(Set<PiirivalvurVaeosa> piirivalvurVaeosas) {
+		this.piirivalvurVaeosas = piirivalvurVaeosas;
 	}
 	
 }

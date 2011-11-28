@@ -11,7 +11,7 @@
                 <field:datetime dateTimePattern="${vahtkond_kuni_date_format}" field="Kuni" id="c_itcollege_ee_entities_Vahtkond_Kuni" required="true" z="uGMXgrNYJaIJOJuIZ2KMGg/nr+8="/>
             </div>
             <div style="float:left; width:250px;">
-                <field:textarea field="Komentaar" id="c_itcollege_ee_entities_Vahtkond_Komentaar" z="user-managed"/>
+                <field:textarea field="Kommentaar" id="c_itcollege_ee_entities_Vahtkond_Komentaar" z="user-managed"/>
             </div>
         </div>
     </form:create>
